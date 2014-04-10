@@ -26,42 +26,42 @@ noti-J
    * lib 폴더 하위모든 jar파일을 Application classpath로 포함시킨다.
 
 ###사용법
- > Gateway
- * server.conf: Gateway의 환경설정파일로 JSON문법으로 구성되어있다.
+ * Gateway
+  * server.conf: Gateway의 환경설정파일로 JSON문법으로 구성되어있다.
    * host: Gateway설치 IP
    * rport: Receiver가 접속할 port번호
    * sport: Sender가 접속할 port번호
    * receivers: Receiver 인정정보
-     * protocol: file, http (Receiver 인증정보를 file 또는 http를 통해 load한다.)
-     * url: Receiver 인증정보 경로
-     * reload: Receiver 인증정보 reload 주기(분)으로 0일경우 reload 하지 않는다.
+    * protocol: file, http (Receiver 인증정보를 file 또는 http를 통해 load한다.)
+    * url: Receiver 인증정보 경로
+    * reload: Receiver 인증정보 reload 주기(분)으로 0일경우 reload 하지 않는다.
    * senders: Sender Application 정보
-     * ip: Sender Application IP Address(등록되어 있지 않을경우 접속을 허용하지 않는다.)
-     * name: Sender Application Name
- * receiver.conf: Receiver 인증정보로 server.conf설정에 따라 파일명은 상이할수 있다.
-   * id: 식별계정
-   * name: 표시이름
-   * passwd: 인증용 비밀번호
- * 실행방법: node gateway.js
- * 종료방법: Window(Ctrl+C), Linux(kill -9 pid)
- * Logging: Console Log는 info로 설정되어 있으며, debug Log는 logs폴더 하위 console.log파일에 저장된다.
- * 메세지저장: Recevier와 연결되지 않을경우 Gateway가 메세지를 보관하고 있다 종료시점시 temp폴더 하위 message.json 파일에 보관하고 Gateway재시작 시점에 load한다.
+    * ip: Sender Application IP Address(등록되어 있지 않을경우 접속을 허용하지 않는다.)
+    * name: Sender Application Name
+   * receiver.conf: Receiver 인증정보로 server.conf설정에 따라 파일명은 상이할수 있다.
+    * id: 식별계정
+    * name: 표시이름
+    * passwd: 인증용 비밀번호
+   * 실행방법: node gateway.js
+   * 종료방법: Window(Ctrl+C), Linux(kill -9 pid)
+   * Logging: Console Log는 info로 설정되어 있으며, debug Log는 logs폴더 하위 console.log파일에 저장된다.
+   * 메세지저장: Recevier와 연결되지 않을경우 Gateway가 메세지를 보관하고 있다 종료시점시 temp폴더 하위 message.json 파일에 보관하고 Gateway재시작 시점에 load한다.
 
- > Receiver(MS Window 기준)
- * notij.ini: Receiver 환경설정 파일     
+ * Receiver(MS Window 기준)
+  * notij.ini: Receiver 환경설정 파일     
    * -Dnotij.host: Gateway IP Address
    * -Dnotij.port: Gateway Receiver Port
    * -Dnotij.userid: Gateway 인증 식별자
    * -Dnotij.passwd: Gateway 인증 비밀번호
    
- > Sender
-   * SyncSender: Gateway로 즉시전송하며, Gateway와 연결되어 있지 않을경우 예외를 발생시킨다.
+ * Sender
+  * SyncSender: Gateway로 즉시전송하며, Gateway와 연결되어 있지 않을경우 예외를 발생시킨다.
     ```
     NotiJSender sender = SyncSender.getInstance();
     sender.connect(host, port);
     sender.send(id, msg, url); 
     ```
-   * ASyncSender: Gateway 연결되어 있지 않은경우도 예외를 발생시키지 않고
+  * ASyncSender: Gateway 연결되어 있지 않은경우도 예외를 발생시키지 않고
      메세지를 Queue에 저장후 연결이 복구되면 메세지를 전송한다.(단 Queue size를 초과하면 예외를 발생시킨다.)
     ```
     NotiJSender sender = AsyncSender.getInstance(queueSize);
