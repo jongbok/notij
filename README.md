@@ -1,4 +1,4 @@
-notij
+noti-J
 =====
 
 ###소개
@@ -57,13 +57,15 @@ notij
     ```
     NotiJSender sender = SyncSender.getInstance();
     sender.connect(host, port);
-    sender.send(id, msg, url); ```
+    sender.send(id, msg, url); 
+    ```
    * ASyncSender: Gateway 연결되어 있지 않은경우도 예외를 발생시키지 않고
      메세지를 Queue에 저장후 연결이 복구되면 메세지를 전송한다.(단 Queue size를 초과하면 예외를 발생시킨다.)
     ```
     NotiJSender sender = AsyncSender.getInstance(queueSize);
     sender.connect(host, port);
-    sender.send(id, msg, url);  ```
+    sender.send(id, msg, url);  
+    ```
 
 ###사용예제
 * Gateway 실행
