@@ -46,13 +46,15 @@ noti-J
  * 종료방법: Window(Ctrl+C), Linux(kill -9 pid)
  * Logging: Console Log는 info로 설정되어 있으며, debug Log는 logs폴더 하위 console.log파일에 저장된다.
  * 메세지저장: Recevier와 연결되지 않을경우 Gateway가 메세지를 보관하고 있다 종료시점시 temp폴더 하위 message.json 파일에 보관하고 Gateway재시작 시점에 load한다.
+
  > Receiver(MS Window 기준)
  * notij.ini: Receiver 환경설정 파일     
    * -Dnotij.host: Gateway IP Address
    * -Dnotij.port: Gateway Receiver Port
    * -Dnotij.userid: Gateway 인증 식별자
    * -Dnotij.passwd: Gateway 인증 비밀번호
- * Sender
+   
+ > Sender
    * SyncSender: Gateway로 즉시전송하며, Gateway와 연결되어 있지 않을경우 예외를 발생시킨다.
     ```
     NotiJSender sender = SyncSender.getInstance();
