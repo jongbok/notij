@@ -71,12 +71,15 @@ noti-J
 
 ###사용예제
 * Gateway 실행
+
   ![alt tag](http://dev.naver.com/wiki/noti-j/pds/FrontPage/gateway.png)
 
 * Sender Console 실행
+
   ![alt tag](http://dev.naver.com/wiki/noti-j/pds/FrontPage/sender.png)
 
 * Receiver 메세지 수신
+
   ![alt tag](http://dev.naver.com/wiki/noti-j/pds/FrontPage/receiver.png)
  
 ###관련정보 링크
