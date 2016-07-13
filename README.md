@@ -72,18 +72,13 @@ noti-J
 ###사용예제
 * Gateway 실행
 
-  ![alt tag](http://dev.naver.com/wiki/noti-j/pds/FrontPage/gateway.png)
+  ![alt tag](https://raw.githubusercontent.com/jongbok/notij/master/docs/images/gateway.png)
 
 * Sender Console 실행
 
-  ![alt tag](http://dev.naver.com/wiki/noti-j/pds/FrontPage/sender.png)
+  ![alt tag](https://raw.githubusercontent.com/jongbok/notij/master/docs/images/sender.png)
 
 * Receiver 메세지 수신
 
-  ![alt tag](http://dev.naver.com/wiki/noti-j/pds/FrontPage/receiver.png)
+  ![alt tag](https://raw.githubusercontent.com/jongbok/notij/master/docs/images/receiver.png)
  
-###관련정보 링크
- * http://blog.naver.com/asdkf20 [Blog]
- * http://dev.naver.com/projects/rclog [RCLog4j Runtime Configuration Log4j]
- * http://dev.naver.com/projects/s-cross [S-Cross Cross-Site Request Security]
- * http://dev.naver.com/projects/wlog [Wlog(Web based Fast Log Viewer)]
